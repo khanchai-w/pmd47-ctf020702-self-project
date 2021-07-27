@@ -1,7 +1,7 @@
 # pmd47-ctf020702-self-project
 PMD47 Self Project งานเดี่ยว
 
-#ชื่อโปรเจค Online Drung Detail
+##ชื่อโปรเจค Online Drung Detail
    เป็นโปรเจค สืบค้นข้อมูลยา
    
 #ขอบเขต
