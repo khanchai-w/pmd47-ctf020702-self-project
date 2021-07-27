@@ -1,0 +1,34 @@
+<div class="row row-cols-1 row-cols-sm-2 text-end">
+  <div class="col-4">
+    <label class="form-label">ค้นหาชื่อยา</label>
+  </div>
+  <div class="col-4">
+    <input class="form-control me-2" [(ngModel)]="keyword" type="text" (ngModelChange)="findDrung($event)">
+  </div>
+  <div *ngIf="error" class="col-4 text-start">
+    <label class="text-warning">! ไม่พบข้อมูล</label>
+  </div>
+</div>
+ <br>
+<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+  <div *ngFor="let drung of drungs">
+  <div class="col mg-b">
+    <div class="card shadow-sm">
+      <div class="card-body">
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+          <a [routerLink]="['/detail/' + drung.drungId]"
+        class="list-group-item list-group-item-action">
+        <i class="bi bi-ui-radios"></i>
+        <b>{{drung.drungName}}</b>
+        <br>ชนิด {{drung.drungType.typeName}} ขนาด {{drung.dosage}}</a>
+        </div>
+
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+           <button type="button"  class="btn mg-rl btn-light" [routerLink]="['/admin/drung/update/' + drung.drungId]"> <i class="bi bi-pencil-square"></i></button>
+           <button type="button"  class="btn mg-rl btn-light" (click)="deleteDrungById(drung.drungId,drung.drungName)"> <i class="bi bi-trash"></i></button>
+        </div>
+        </div>
+    </div>
+  </div>
+</div>
+</div>

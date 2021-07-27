@@ -1,0 +1,20 @@
+<div class="row row-cols-1 row-cols-sm-2 text-end">
+  <div class="col-4">
+    <label class="form-label">ค้นหาชื่อยา</label>
+  </div>
+  <div class="col-4">
+    <input class="form-control me-2" [(ngModel)]="keyword" type="text" (ngModelChange)="findDrung($event)">
+  </div>
+  <div *ngIf="error" class="col-4 text-start">
+    <label class="text-warning">! ไม่พบข้อมูล</label>
+  </div>
+</div>
+ <br>
+<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+  <app-drung-item
+  *ngFor="let d of drungs"
+  [drung]="d"
+  ></app-drung-item>
+</div>
+
+

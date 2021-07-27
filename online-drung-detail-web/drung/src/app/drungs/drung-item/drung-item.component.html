@@ -1,0 +1,9 @@
+<div class="col mg-b">
+  <div class="card shadow-sm">
+    <a [routerLink]="['/detail/' + drung.drungId]"
+      class="list-group-item list-group-item-action">
+      <i class="bi bi-ui-radios"></i>
+      <b>{{drung.drungName}}</b>
+      <br>ชนิด {{drung.drungType.typeName}} ขนาด {{drung.dosage}}</a>
+  </div>
+</div>

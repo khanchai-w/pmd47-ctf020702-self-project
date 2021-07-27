@@ -1,0 +1,13 @@
+/* You can add global styles to this file, and also import other style files */
+@import 'bootstrap/dist/css/bootstrap.css'; /* Bootstrap css */
+@import 'bootstrap-icons/font/bootstrap-icons.css'; /* Bootstrap icons */
+
+@import url('https://fonts.googleapis.com/css2?family=Sarabun:wght@200&display=swap');
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Sarabun, Roboto, "Helvetica Neue", sans-serif; }
+
+/* font */
+h1,h2,h3,h4,h5,h6,p,td,th,textarea,input {font-family: 'Sarabun', sans-serif;}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

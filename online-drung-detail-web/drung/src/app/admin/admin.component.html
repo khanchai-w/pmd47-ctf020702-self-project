@@ -1,0 +1,31 @@
+<div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+  <h3 class="display-4 fw-normal">จัดการข้อมูลยา</h3>
+  <p class="fs-5 text-muted">ระบบจัดการข้อมูลยาสำหรับประชาชน เพื่อเป็นประโยชน์ในการใช้ยาได้อย่างสมเหตุผลของประชาชน</p>
+</div>
+<nav class="navbar navbar-expand-lg navbar-light bg-success">
+  <div class="container-fluid">
+    <button class="navbar-toggler text-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+      <a class="navbar-brand text-light" href="#"><i class="bi bi-gear"></i></a>
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link text-light active" aria-current="page" href="#"><i class="bi bi-house-fill"></i> หน้าหลัก</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-light" [routerLink]="['/admin/drung/add']"><i class="bi bi-plus-square"></i> เพิ่ม</a>
+        </li>
+      </ul>
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-light" type="submit"> ค้นหา</button>
+      </form>
+    </div>
+  </div>
+</nav>
+ <br>
+<div class="container">
+  <app-drung-manage></app-drung-manage>
+</div>
+

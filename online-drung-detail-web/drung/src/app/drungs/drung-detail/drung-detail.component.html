@@ -1,0 +1,116 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <button type="button" class="btn btn-default" style="float: right;" onclick="window.history.go(-1);">
+        <i class="bi bi-arrow-left-square"></i> Back
+      </button>
+    </div>
+    <div class="col-12">
+      <h2>รายละเอียดเกี่ยวกับยา</h2>
+    </div>
+  </div>
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+    <div class="col mg-b">
+      <div class="card shadow-sm">
+        <div class="card-header bg-info">
+          <b>ข้อมูลทั่วไป</b>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title"><b>ชื่อยา:</b> {{drung.drungName}}</h5>
+          <p class="card-text"><b>ชนิด:</b> {{drung.drungType.typeName}}</p>
+          <p class="card-text"><b>ขนาด:</b> {{drung.dosage}}</p>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="col mg-b">
+      <div class="card shadow-sm">
+        <div class="card-body">
+          <svg *ngIf="drung.image==null" class="bd-placeholder-img card-img-top mg-b" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">ภาพตัวอย่าง</text></svg>
+
+          <img src="{{drung.image}}" class="img-fluid" title="{{drung.drungName}}">
+          <a href="{{drung.referUrl}}" class="btn btn-primary">ข้อมูลเพิ่มเติม</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col mg-b">
+      <div class="card shadow-sm">
+        <div class="card-header bg-primary">
+          <b>ยานี้คือยาอะไร</b>
+        </div>
+        <div class="card-body">
+          <p class="card-text" [innerHTML]="drung.propreties"></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col mg-b">
+      <div class="card shadow-sm">
+        <div class="card-header bg-success">
+          <b>ข้อควรรู้ก่อนใช้ยา</b>
+        </div>
+        <div class="card-body">
+          <p class="card-text" [innerHTML]="drung.beforeUse"></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col shadow-sm mg-b">
+      <div class="card shadow-sm">
+        <div class="card-header bg-warning">
+          <b>วิธีใช้ยา</b>
+        </div>
+        <div class="card-body">
+          <p class="card-text" [innerHTML]="drung.howUse"></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col mg-b">
+      <div class="card shadow-sm">
+        <div class="card-header bg-warning">
+          <b>ข้อควรปฏิบัติระหว่างการใช้ยา</b>
+        </div>
+        <div class="card-body">
+          <p class="card-text" [innerHTML]="drung.codeConduct"></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col mg-b">
+      <div class="card shadow-sm">
+        <div class="card-header bg-danger">
+          <b>อันตรายที่อาจเกิดจากยา</b>
+        </div>
+        <div class="card-body">
+          <p class="card-text" [innerHTML]="drung.danger"></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col mg-b">
+      <div class="card shadow-sm">
+        <div class="card-header bg-secondary">
+          <b>ควรเก็บยานีอย่างไร</b>
+        </div>
+        <div class="card-body">
+          <p class="card-text" [innerHTML]="drung.keep"></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col mg-b">
+      <div class="card shadow-sm">
+        <div class="card-header">
+          <b>ลักษณะและสวนประกอบของยานี้</b>
+        </div>
+        <div class="card-body">
+          <p class="card-text" [innerHTML]="drung.look"></p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

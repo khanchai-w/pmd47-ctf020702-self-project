@@ -1,0 +1,242 @@
+<div class="container">
+  <div class="dash-header">
+    <div class="dash-title">
+      <h1> แก้ไข</h1>
+    </div>
+  </div>
+  <div class="drung-form">
+    <form [formGroup]="drungForm" (ngSubmit)="onSubmit()">
+      <div class="form-group form-row">
+        <label class="col-md-3">ชื่อยา</label>
+        <div class="col-md-6">
+          <input class="form-control" formControlName="drungName" placeholder="ชื่อยา">
+        </div>
+        <div class="valid-feedback" *ngIf="drungForm.get('drungName').errors?.required">
+          ยังไม่กรอกชื่อยา
+        </div>
+      </div>
+      <br>
+      <div class="form-group form-row">
+        <label class="col-md-3">ชนิดยา</label>
+        <div class="col-md-6">
+          <select class="form-control" formControlName="typeName">
+            <option value="">--เลือก--</option>
+            <option value="เม็ด">เม็ด</option>
+            <option value="น้ำ">น้ำ</option>
+          </select>
+        </div>
+        <div class="valid-feedback" *ngIf="drungForm.get('typeName').errors?.required">
+          ยังไม่เลือกข้อมูล
+        </div>
+      </div>
+      <br>
+      <div class="form-group form-row">
+        <label class="col-md-3">ขนาดยา</label>
+        <div class="col-md-6">
+          <input class="form-control" formControlName="dosage" placeholder="ขนาดยา">
+        </div>
+        <div class="valid-feedback" *ngIf="drungForm.get('dosage').errors?.required">
+          ยังไม่กรอกข้อมูล (หากไม่มีข้อมูลให้ใส่ -)
+        </div>
+      </div>
+      <br>
+      <div class="form-group form-row">
+        <label class="col-md-3">ยานี้คือยาอะไร</label>
+        <div class="col">
+          <editor class="form-control" formControlName="propreties"
+            apiKey="wobstcjbjk4xst80rbuetp2wee73xuef5ohs7xgho2qlimbg" [init]="{
+            icons: 'material',
+            skin: 'borderless',
+            plugins:  [
+            'advlist autolink lists link image charmap print preview anchor',
+            'searchreplace visualblocks code fullscreen',
+            'insertdatetime media table paste code help wordcount'
+            ],
+            toolbar: 'undo redo | formatselect | ' +
+              'bold italic backcolor | alignleft aligncenter ' +
+              'alignright alignjustify | bullist numlist outdent indent | ' +
+              'removeformat | help',
+            content_style: 'body { font-family:Sarabun,Helvetica,Arial,sans-serif; font-size:14px }'
+          }"></editor>
+        </div>
+        <div class="valid-feedback" *ngIf="drungForm.get('propreties').errors?.required">
+          ยังไม่กรอกข้อมูล (หากไม่มีข้อมูลให้ใส่ -)
+        </div>
+      </div>
+      <br>
+      <div class="form-group form-row">
+        <label class="col-md-3">ข้อควรรู้ก่อนใช้ยา</label>
+        <div class="col">
+          <editor class="form-control" formControlName="beforeUse"
+            apiKey="wobstcjbjk4xst80rbuetp2wee73xuef5ohs7xgho2qlimbg" [init]="{
+            icons: 'material',
+            skin: 'borderless',
+            plugins:  [
+            'advlist autolink lists link image charmap print preview anchor',
+            'searchreplace visualblocks code fullscreen',
+            'insertdatetime media table paste code help wordcount'
+            ],
+            toolbar: 'undo redo | formatselect | ' +
+              'bold italic backcolor | alignleft aligncenter ' +
+              'alignright alignjustify | bullist numlist outdent indent | ' +
+              'removeformat | help',
+            content_style: 'body { font-family:Sarabun,Helvetica,Arial,sans-serif; font-size:14px }'
+          }"></editor>
+        </div>
+        <div class="valid-feedback" *ngIf="drungForm.get('beforeUse').errors?.required">
+          ยังไม่กรอกข้อมูล (หากไม่มีข้อมูลให้ใส่ -)
+        </div>
+      </div>
+      <br>
+      <div class="form-group form-row">
+        <label class="col-md-3">วิธีใช้ยา</label>
+        <div class="col">
+          <editor class="form-control" formControlName="howUse"
+            apiKey="wobstcjbjk4xst80rbuetp2wee73xuef5ohs7xgho2qlimbg" [init]="{
+            icons: 'material',
+            skin: 'borderless',
+            plugins:  [
+            'advlist autolink lists link image charmap print preview anchor',
+            'searchreplace visualblocks code fullscreen',
+            'insertdatetime media table paste code help wordcount'
+            ],
+            toolbar: 'undo redo | formatselect | ' +
+              'bold italic backcolor | alignleft aligncenter ' +
+              'alignright alignjustify | bullist numlist outdent indent | ' +
+              'removeformat | help',
+            content_style: 'body { font-family:Sarabun,Helvetica,Arial,sans-serif; font-size:14px }'
+          }"></editor>
+        </div>
+        <div class="valid-feedback" *ngIf="drungForm.get('howUse').errors?.required">
+          ยังไม่กรอกข้อมูล (หากไม่มีข้อมูลให้ใส่ -)
+        </div>
+      </div>
+      <br>
+      <div class="form-group form-row">
+        <label class="col-md-3">ข้อควรปฏิบัติระหว่างการใช้ยา</label>
+        <div class="col">
+          <editor class="form-control" formControlName="codeConduct"
+            apiKey="wobstcjbjk4xst80rbuetp2wee73xuef5ohs7xgho2qlimbg" [init]="{
+            icons: 'material',
+            skin: 'borderless',
+            plugins:  [
+            'advlist autolink lists link image charmap print preview anchor',
+            'searchreplace visualblocks code fullscreen',
+            'insertdatetime media table paste code help wordcount'
+            ],
+            toolbar: 'undo redo | formatselect | ' +
+              'bold italic backcolor | alignleft aligncenter ' +
+              'alignright alignjustify | bullist numlist outdent indent | ' +
+              'removeformat | help',
+            content_style: 'body { font-family:Sarabun,Helvetica,Arial,sans-serif; font-size:14px }'
+          }"></editor>
+        </div>
+        <div class="valid-feedback" *ngIf="drungForm.get('codeConduct').errors?.required">
+          ยังไม่กรอกข้อมูล (หากไม่มีข้อมูลให้ใส่ -)
+        </div>
+      </div>
+      <br>
+      <div class="form-group form-row">
+        <label class="col-md-3">อันตรายที่อาจเกิดจากยา</label>
+        <div class="col">
+          <editor class="form-control" formControlName="danger"
+            apiKey="wobstcjbjk4xst80rbuetp2wee73xuef5ohs7xgho2qlimbg" [init]="{
+            icons: 'material',
+            skin: 'borderless',
+            plugins:  [
+            'advlist autolink lists link image charmap print preview anchor',
+            'searchreplace visualblocks code fullscreen',
+            'insertdatetime media table paste code help wordcount'
+            ],
+            toolbar: 'undo redo | formatselect | ' +
+              'bold italic backcolor | alignleft aligncenter ' +
+              'alignright alignjustify | bullist numlist outdent indent | ' +
+              'removeformat | help',
+            content_style: 'body { font-family:Sarabun,Helvetica,Arial,sans-serif; font-size:14px }'
+          }"></editor>
+        </div>
+        <div class="valid-feedback" *ngIf="drungForm.get('danger').errors?.required">
+          ยังไม่กรอกข้อมูล (หากไม่มีข้อมูลให้ใส่ -)
+        </div>
+      </div>
+      <br>
+      <div class="form-group form-row">
+        <label class="col-md-3">ควรเก็บยานีอย่างไร</label>
+        <div class="col">
+          <editor class="form-control" formControlName="keep" apiKey="wobstcjbjk4xst80rbuetp2wee73xuef5ohs7xgho2qlimbg"
+            [init]="{
+            icons: 'material',
+            skin: 'borderless',
+            plugins:  [
+            'advlist autolink lists link image charmap print preview anchor',
+            'searchreplace visualblocks code fullscreen',
+            'insertdatetime media table paste code help wordcount'
+            ],
+            toolbar: 'undo redo | formatselect | ' +
+              'bold italic backcolor | alignleft aligncenter ' +
+              'alignright alignjustify | bullist numlist outdent indent | ' +
+              'removeformat | help',
+            content_style: 'body { font-family:Sarabun,Helvetica,Arial,sans-serif; font-size:14px }'
+          }"></editor>
+        </div>
+        <div class="valid-feedback" *ngIf="drungForm.get('keep').errors?.required">
+          ยังไม่กรอกข้อมูล (หากไม่มีข้อมูลให้ใส่ -)
+        </div>
+      </div>
+      <br>
+      <div class="form-group form-row">
+        <label class="col-md-3">ลักษณะและสวนประกอบของยานี้</label>
+        <div class="col">
+          <editor class="form-control" formControlName="look" apiKey="wobstcjbjk4xst80rbuetp2wee73xuef5ohs7xgho2qlimbg"
+            [init]="{
+            icons: 'material',
+            skin: 'borderless',
+            plugins:  [
+            'advlist autolink lists link image charmap print preview anchor',
+            'searchreplace visualblocks code fullscreen',
+            'insertdatetime media table paste code help wordcount'
+            ],
+            toolbar: 'undo redo | formatselect | ' +
+              'bold italic backcolor | alignleft aligncenter ' +
+              'alignright alignjustify | bullist numlist outdent indent | ' +
+              'removeformat | help',
+            content_style: 'body { font-family:Sarabun,Helvetica,Arial,sans-serif; font-size:14px }'
+          }"></editor>
+        </div>
+        <div class="valid-feedback" *ngIf="drungForm.get('look').errors?.required">
+          ยังไม่กรอกข้อมูล (หากไม่มีข้อมูลให้ใส่ -)
+        </div>
+      </div>
+      <br>
+      <div class="form-group form-row">
+        <label class="col-md-3">ลิงค์รูป</label>
+        <div class="col-md-6">
+          <input class="form-control" formControlName="image" placeholder="link Url">
+        </div>
+        <div class="valid-feedback" *ngIf="drungForm.get('image').errors?.required">
+          ยังไม่กรอกข้อมูล
+        </div>
+      </div>
+      <br><div class="form-group form-row">
+        <label class="col-md-3">ลิงค์ข้อมูลเพิ่มเติม</label>
+        <div class="col-md-6">
+          <input class="form-control" formControlName="referUrl" placeholder="link Url">
+        </div>
+        <div class="valid-feedback" *ngIf="drungForm.get('referUrl').errors?.required">
+          ยังไม่กรอกข้อมูล
+        </div>
+      </div>
+
+      <div class="form-group form-row">
+        <label class="col-md-3"></label>
+        <div class="col-md-9">
+          <input type="hidden" formControlName="drungId">
+          <p *ngIf="error" class="text-danger">{{error}}</p>
+          <p class="text-warning">หากไม่สามารถกดปุ่มบันทึกได้ กรุณาตรวจสอบการกรอกข้อมูล</p>
+          <button type="submit" [disabled]="!drungForm.valid" class="btn btn-primary">บันทึก</button>
+          <button type="submit" routerLink="/admin/" class="btn btn-mute">ยกเลิก</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
