@@ -22,6 +22,6 @@ PMD47 Self Project งานเดี่ยว
   - ใช้ Mysql
 
 ## Ui
-![alt tag](https://drive.google.com/uc?export=view&id=1CFAjSK9-3Fip8jbEFDzx2eKfnC9y0RSO)
+![alt tag](http://www.pccm.ac.th/2020/assets/source/20210723_%20admission-news-m4-2565/admission-m4.jpg)
   
 
